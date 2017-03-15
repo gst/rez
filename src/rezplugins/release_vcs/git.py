@@ -85,7 +85,7 @@ class GitReleaseVCS(ReleaseVCS):
 
     def validate_repostate(self):
         b = self.git("rev-parse", "--is-bare-repository")
-        if b == "true":
+        if b == ["true"]:
             raise ReleaseVCSError("Could not release: bare git repository")
 
         remote, remote_branch = self.get_tracking_branch()
