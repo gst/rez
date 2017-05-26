@@ -312,7 +312,7 @@ class BuildProcessHelper(BuildProcess):
                     "%s cancelled by %s hook '%s': %s:\n%s"
                     % (hook_event.noun, hook_event.label, hook.name(),
                        e.__class__.__name__, str(e)))
-            except RezError:
+            except RezError as e:
                 self.debug_print(
                     "Error in %s hook '%s': %s:\n%s"
                     % (hook_event.label, hook.name(),
